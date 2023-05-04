@@ -84,4 +84,4 @@ print(f"Watch Next Dataset: Number of items from RAW DATA with NO DUPLICATES {co
 #watch_next_dataset_clean.coalesce(1).write.mode('overwrite').csv("s3://unibg-tcm-tedx-pausaattiva/data/watch_next_dataset_clean")
 
 tedx_dataset_clean.toPandas().to_csv("s3://unibg-tcm-tedx-pausaattiva/data/tedx_dataset_clean.csv",index=False)
-tedx_dataset_clean.toPandas().to_csv("s3://unibg-tcm-tedx-pausaattiva/data/watch_next_dataset_clean.csv",index=False)
+watch_next_dataset_clean.toPandas().to_csv("s3://unibg-tcm-tedx-pausaattiva/data/watch_next_dataset_clean.csv",index=False)

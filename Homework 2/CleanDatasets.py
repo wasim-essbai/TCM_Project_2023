@@ -35,6 +35,7 @@ tedx_dataset = spark.read \
     .option("header","true") \
     .option("quote", "\"") \
     .option("escape", "\"") \
+    .option("multiline", "true") \
     .csv(tedx_dataset_path)
     
 tedx_dataset.printSchema()

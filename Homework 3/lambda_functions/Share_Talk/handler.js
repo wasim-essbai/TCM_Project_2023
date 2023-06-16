@@ -66,7 +66,6 @@ module.exports.share_talk = (event, context, callback) => {
     }
     
     const username = event.requestContext.authorizer.claims['cognito:username']
-    
     try{
         const params = {
             UserPoolId: process.env.userPoolId,
@@ -91,7 +90,6 @@ module.exports.share_talk = (event, context, callback) => {
                 })
             return;
           }
-                
         });
     } catch(err){
                 callback(null, {

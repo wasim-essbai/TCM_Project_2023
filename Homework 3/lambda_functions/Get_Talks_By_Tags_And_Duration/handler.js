@@ -96,7 +96,6 @@ module.exports.get_by_tags_and_duration = (event, context, callback) => {
                 {$multiply: [{$toInt: {$substr: ["$duration", 2, 2]}}, 1]}
             ]
     }
-    
     let addTotDuration = {
         $addFields:
         {
@@ -121,8 +120,6 @@ module.exports.get_by_tags_and_duration = (event, context, callback) => {
     agg_query.push({$match: find_query});
     agg_query.push({$skip : (body.doc_per_page * body.page) - body.doc_per_page});
     agg_query.push({$limit : body.doc_per_page});
-    
-    
     
     connect_to_db().then(() => {
         console.log("Aggregate query", agg_query);
